@@ -12,7 +12,7 @@ class Beranda extends CI_Controller
 
         // make request
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://newsapi.org/v2/top-headlines?category=health&country=id&apiKey=8642ac8d640f4a3c98046ce6e84b294e");
+        curl_setopt($ch, CURLOPT_URL, "https://newsapi.org/v2/top-headlines?category=general&country=id&apiKey=8642ac8d640f4a3c98046ce6e84b294e");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         $data = curl_exec($ch);
