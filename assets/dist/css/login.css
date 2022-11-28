@@ -1,20 +1,24 @@
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-    font-family: 'Noto Sans',sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
 }
 
-body{
+body {
     background-color: #373C4E;
 }
 
-.form{
+small {
+    margin-left: 100px;
+}
+
+form {
     display: flex;
-	box-shadow: 0 4px 10px 5px rgb(0 0 0 / 20%);
+    box-shadow: 0 4px 10px 5px rgb(0 0 0 / 20%);
     border: 1px solid #b9b9b9;
     border-radius: 15px;
-	width: 100%;
+    width: 100%;
     height: 100%;
     max-width: 500px;
     max-height: auto;
@@ -23,7 +27,8 @@ body{
     align-items: center;
 }
 
-.pendaftaran, ._login{
+.pendaftaran,
+._login {
     display: flex;
     width: 100%;
     height: 100%;
@@ -32,20 +37,20 @@ body{
     justify-content: center;
 }
 
-.input{
+.input {
     width: 100%;
-    display:grid;
+    display: grid;
     grid-template-columns: 100px auto;
     padding: 10px 20px 10px 20px;
     align-items: center;
-    
+
 }
 
-.input h2{
+.input h2 {
     font-size: 16px;
 }
 
-.title h1{
+.title h1 {
     display: flex;
     justify-content: center;
     font-size: 30px;
@@ -55,14 +60,14 @@ body{
 
 
 
-.b_daftar{
+.b_daftar {
     display: flex;
     width: 100%;
     padding: 20px 20px 10px 20px;
     justify-content: end;
 }
 
-#daftar{
+#daftar {
     display: flex;
     width: 100%;
     height: 100%;
@@ -72,7 +77,7 @@ body{
     padding: 10px;
     background-color: #F8C300;
     justify-content: center;
-    font-size:medium;
+    font-size: medium;
     font-weight: 700;
 }
 
@@ -80,17 +85,18 @@ body{
     background-color: #d4a701;
 }
 
-.login{
+.login {
     padding: 10px 10px 20px 10px;
 }
-.login a{
-		text-decoration: none;
-		color: #F8C300;
-		padding: 12px 0px 12px;
-		font-size: 14px;
+
+.login a {
+    text-decoration: none;
+    color: #F8C300;
+    padding: 12px 0px 12px;
+    font-size: 14px;
 }
 
-.b_login{
+.b_login {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
@@ -98,7 +104,7 @@ body{
     justify-content: end;
 }
 
-.b_login_admin{
+.b_login_admin {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
@@ -106,7 +112,7 @@ body{
     justify-content: end;
 }
 
-#login{
+#login {
     display: flex;
     width: 100%;
     height: 100%;
@@ -117,15 +123,15 @@ body{
     padding: 10px;
     background-color: #F8C300;
     justify-content: center;
-    font-size:medium;
+    font-size: medium;
     font-weight: 700;
 }
 
-#login:hover{
+#login:hover {
     background-color: #a88400;
 }
 
-#batal{
+#batal {
     display: flex;
     width: 100%;
     height: 100%;
@@ -135,10 +141,10 @@ body{
     padding: 10px;
     background-color: #F80000;
     justify-content: center;
-    font-size:medium;
+    font-size: medium;
     font-weight: 700;
 }
 
-#batal:hover{
+#batal:hover {
     background-color: #970000;
 }

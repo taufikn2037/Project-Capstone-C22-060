@@ -14,23 +14,23 @@
 <body>
 <main>
     <section class="_login">
-      <div class="form">
+      <form class="admin">
         <div class="title">
           <h1>Admin</h1>
         </div>
         <div class="input">
           <h2>Username</h2>
-          <input placeholder="" id="username__user" class="form-control">
+          <input placeholder="" id="username__admin" name="username__admin" class="form-control">
         </div>
         <div class="input">
           <h2>Password</h2>
-          <input placeholder="" id="password__user" class="form-control">
+          <input placeholder="" id="password__admin" name="password__admin" class="form-control">
         </div>
         <div class="b_login_admin">
           <button id="batal" type="batal">Batal</button>
           <button id="login" type="submit" value="submit">Login</button>
         </div>
-        </div>    
+        </form>    
       </div>
     </section>
 </main>
