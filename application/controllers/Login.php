@@ -9,10 +9,62 @@ class Login extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
     }
+
     public function index()
     {
+        $this->form_validation->set_rules(
+            'username__user',
+            'Username',
+            'trim|required'
+        );
 
-        $this->load->view('v_auth/login_user');
+        $this->form_validation->set_rules(
+            'password__user',
+            'Password',
+            'trim|required'
+        );
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('v_auth/login_user');
+        } else {
+            //validasi success
+            $this->_auth();
+        }
+    }
+
+    private function _auth()
+    {
+        $username = $this->input->post('username__user');
+        $password = $this->input->post('password__user');
+
+        $user = $this->db->get_where('users', ['username__user' => $username])->row_array();
+
+        // jika user ada
+        if ($user) {
+            // jika user aktif
+            if ($user['is_active'] == 1) {
+                //cek password
+                if (password_verify($password, $user['password__user'])) {
+                    $data = [
+                        'username__user' => $user['username__user'],
+                        'role_id' => $user['role_id']
+                    ];
+                    $this->session->set_userdata($data);
+                    if ($user['role_id'] == 2) {
+                        redirect('user');
+                    }
+                } else {
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Password salah!</div>');
+                    redirect('login');
+                }
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Username belum aktif</div>');
+                redirect('login');
+            }
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Username tidak ada</div>');
+            redirect('login');
+        }
     }
 
     public function daftar()
@@ -22,29 +74,39 @@ class Login extends CI_Controller
             'Nama',
             'required|trim'
         );
+
         $this->form_validation->set_rules(
             'username__user',
             'Username',
-            'required|trim'
+            'required|trim|is_unique[users.username__user]',
+            ['is_unique' => 'Username sudah digunakan!']
         );
+
         $this->form_validation->set_rules(
             'nik__user',
             'NIK',
             'required|trim'
         );
+
         $this->form_validation->set_rules(
             'email__user',
             'Email',
             'required|trim|valid_email|is_unique[users.email__user]',
             ['is_unique' => 'Email sudah pernah didaftarkan!']
         );
+
         $this->form_validation->set_rules(
             'password__user',
             'Password',
             'required|trim|min_length[4]|matches[rpassword__user]',
-            ['matches' => 'Password dont match!', 'min_lenght' => 'Password too short!']
+            ['matches' => 'Password tidak cocok!', 'min_length' => 'Password terlalu pendek!',]
         );
-        $this->form_validation->set_rules('rpassword__user', 'Password', 'required|trim|matches[password__user]');
+
+        $this->form_validation->set_rules(
+            'rpassword__user',
+            'Password',
+            'required|trim|matches[password__user]'
+        );
 
         if ($this->form_validation->run() == false) {
             $this->load->library('form_validation');
@@ -71,5 +133,19 @@ class Login extends CI_Controller
     public function login_admin()
     {
         $this->load->view('v_auth/login_admin');
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('username__user');
+        $this->session->unset_userdata('role_id');
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Kamu telah keluar</div>');
+        redirect('login');
+    }
+
+    public function blocked()
+    {
+        echo 'access blocked';
     }
 }

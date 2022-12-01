@@ -96,12 +96,21 @@ form {
     font-size: 14px;
 }
 
+.login a:hover {
+    text-decoration: underline;
+}
+
 .b_login {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
     padding: 20px 30px 10px 20px;
     justify-content: end;
+}
+
+.b_login a {
+    text-decoration: none;
+    color: #000000;
 }
 
 .b_login_admin {

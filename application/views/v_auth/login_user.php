@@ -15,21 +15,23 @@
 <body>
   <main>
     <section class="_login">
-      <form class="user">
+      <form class="user" method="POST" action="<?= base_url('login'); ?>">
         <div class="title">
           <h1>Login</h1>
         </div>
         <?= $this->session->flashdata('message'); ?>
         <div class="input">
           <h2>Username</h2>
-          <input placeholder="" id="username__user" name="username__user" class="form-control" type="nama">
+          <input placeholder="" id="username__user" name="username__user" class="form-control" type="text" value="<?= set_value('username__user'); ?>">
         </div>
+        <?= form_error('username__user', '<small class="text-danger pl-3">', '</small>') ?>
         <div class="input">
           <h2>Password</h2>
-          <input placeholder="" id="password__user" name="password__user" class="form-control" type="nama">
+          <input placeholder="" id="password__user" name="password__user" class="form-control" type="password">
         </div>
+        <?= form_error('password__user', '<small class="text-danger pl-3">', '</small>') ?>
         <div class="b_login">
-          <button id="batal" type="batal">Batal</button>
+          <a href="<?= base_url('beranda') ?>" id="batal">Batal</a>
           <button id="login" type="submit" value="submit">Login</button>
         </div>
         <div class="login">

@@ -36,7 +36,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#content-4">Galeri</a>
                 </li>
-                <button class="btn btn-warning nav-link mx-2" type="button">Login</button>
+                <a href="<?= base_url('login') ?>" class="btn btn-warning nav-link mx-2" type="button">Login</a>
             </ul>
         </div>
     </nav>
