@@ -3,12 +3,21 @@
         height: 70vh;
     }
 
+    #content-1 {
+        text-align: center;
+    }
+
     #content-2 img {
         width: 120px;
     }
 
     #content-2 .box {
         height: 300px;
+    }
+
+    #content-3 .row {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
@@ -24,10 +33,6 @@
 
     .jumbotron p {
         width: 80%;
-    }
-
-    #content-1 {
-        text-align: center;
     }
 
     #content-2 h5,
