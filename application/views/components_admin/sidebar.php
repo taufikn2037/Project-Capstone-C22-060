@@ -9,7 +9,7 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <span>Administrator - <?= $admins['name__admin']; ?> |</span>
+          <span><?= $admins['name__admin']; ?> |</span>
           <a href="logout" class="btn btn-warning font-weight-bold" role="button" data-target="#logoutModal" data-toggle="modal" aria-pressed="true">Logout</a>
         </li>
       </ul>

@@ -13,7 +13,7 @@ class M_model extends CI_Model{
 	}
 
 	public function update_data($data, $table){
-		$this->db->where('id', $data['id']);
+		$this->db->where('id_admin', $data['id_admin']);
 		$this->db->update($table, $data);
 	}
 
