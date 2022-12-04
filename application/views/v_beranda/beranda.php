@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="<?php echo base_url();?>assets/dist/img/logo.png" rel="icon">
     <link rel="stylesheet" href="<?= base_url('assets') ?> /dist/css/beranda.css">
     <link rel="stylesheet" href="<?= base_url('assets') ?> /dist/css/beranda_responsif.css">
+    <script defer src="<?= base_url('assets') ?> /dist/js/pages/beranda.js"></script>
     <title>Homepage SuaraQita</title>
 </head>
 
@@ -52,7 +54,7 @@
     <section class="py-5" id="content-1">
         <div class="container py-5">
             <div class="row g-4 py-2">
-                <div class="col-md-6">
+                <div class="col-md-6 hidden fade-left">
                     <h2 class="pb-2">Apa itu website Suara<span>Qita</span>?</h2>
                     <p>Aplikasi SuaraQita merupakan aplikasi yang dapat
                         digunakan oleh masyarakat untuk menyampaikan
@@ -64,7 +66,7 @@
                         melakukan pengaduan atau keluhan dimanapun dan
                         kapanpun.</p>
                 </div>
-                <div class="col-md-6 text-center about-text">
+                <div class="col-md-6 hidden text-center fade-right">
                     <img class="about-image mx-auto" src="<?= base_url('assets') ?> /dist/img/about-image.png" alt="About Image">
                 </div>
             </div>
@@ -74,40 +76,40 @@
     <section class="py-5" id="content-2">
         <div class="container pb-4">
             <h3 class="text-center py-5 fw-bold">Alur Pengaduan</h3>
-            <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-5 g-4 text-center">
-                <div class="col-sm">
-                    <div class="box mx-auto">
+            <div class="row row-cols-2 row-cols-xs-3 row-cols-lg-5 g-4 text-center">
+                <div class="col-sm hidden fade-up">
+                    <div class="box mx-auto hover-able">
                         <img class="pb-3" src="<?= base_url('assets') ?>/dist/img/alur-1.png" alt="Langkah Pertama">
                         <h5 class="fw-bold">Daftar/Masuk</h5>
                         <p> Daftar/Masuk terlebih
                             dahulu untuk melaporkan
                             keluhan atau pengaduan
-                            anda</p>
+                            Anda</p>
                     </div>
                 </div>
 
-                <div class="col-sm">
-                    <div class="box mx-auto">
+                <div class="col-sm hidden fade-down">
+                    <div class="box mx-auto hover-able">
                         <img class="pb-3" src="<?= base_url('assets') ?> /dist/img/alur-2.png" alt="Langkah Kedua">
                         <h5 class="fw-bold">Tulis Laporan</h5>
                         <p> Laporkan keluhan atau
-                            aduan anda dengan
+                            aduan Anda dengan
                             jelas dan lengkap</p>
                     </div>
                 </div>
 
-                <div class="col-sm">
-                    <div class="box mx-auto">
+                <div class="col-sm hidden fade-up">
+                    <div class="box mx-auto hover-able">
                         <img class="pb-3" src="<?= base_url('assets') ?> /dist/img/alur-3.png" alt="Langkah Ketiga">
                         <h5 class="fw-bold">Tindak Lanjut</h5>
-                        <p> Laporan anda akan
+                        <p> Laporan Anda akan
                             diverifikasi dan diteruskan
                             kepada pihak berwenang</p>
                     </div>
                 </div>
 
-                <div class="col-sm">
-                    <div class="box mx-auto">
+                <div class="col-sm hidden fade-down">
+                    <div class="box mx-auto hover-able">
                         <img class="pb-3" src="<?= base_url('assets') ?> /dist/img/alur-4.png" alt="Langkah Keempat">
                         <h5 class="fw-bold">Tanggapan</h5>
                         <p> Anda akan mendapatkan
@@ -116,11 +118,11 @@
                     </div>
                 </div>
 
-                <div class="col-sm">
-                    <div class="box mx-auto">
+                <div class="col-sm hidden fade-up">
+                    <div class="box mx-auto hover-able">
                         <img class="pb-3" src="<?= base_url('assets') ?> /dist/img/alur-5.png" alt="Langkah Kelima">
                         <h5 class="fw-bold">Selesai</h5>
-                        <p> Laporan anda akan terus
+                        <p> Laporan Anda akan terus
                             ditindaklanjuti hingga
                             terselesaikan</p>
                     </div>
@@ -138,16 +140,20 @@
                 <?php $i = 0;
                 foreach ($articles as $value) { ?>
 
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="<?= $value['urlToImage'] ?>" onerror="this.src='<?= base_url('assets/'); ?>public/images/sample-img1.jpeg'" alt="Contoh berita">
+                    <div class="col-md-4 hidden fade-left">
+                        <div class="card h-100 shadow-sm hover-able">
+                            <img class="card-img-top" src="<?= $value['urlToImage'] ?>" onerror="this.src='<?= base_url('assets'); ?> /dist/img/berita-default.png'" alt="Preview Gambar Berita">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $value['title']  ?></h5>
-                                <h6 class="card-subtitle mb-2 text-muted"><?= $value['publishedAt']  ?></h6>
+                                <h6 class="card-subtitle py-2 text-muted">
+                                    <?php  
+                                        $publishedAt = explode("T", $value['publishedAt']);
+                                        $newDateFormat = date('d-m-Y',strtotime($publishedAt[0]));
+                                        echo $newDateFormat;
+                                    ?>
+                                </h6>
                                 <p class="card-text"><?= $value['description']  ?></p>
-                                <div class="text-end">
-                                    <a href="<?= $value['url']  ?>" aria-label="Read More" target="_blank">Read More</a>
-                                </div>
+                                <a href="<?= $value['url']  ?>" class="float-end" aria-label="Read More" role="button" target="_blank">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -163,22 +169,22 @@
         <div class="container-lg pb-4">
             <h3 class="text-center py-4 fw-bold">Galeri</h3>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-                <div class="col-md-4">
+                <div class="col-md-4 hidden fade-right hover-able">
                     <img src="<?= base_url('assets') ?> /dist/img/gallery-1.png" alt="Galeri Pertama">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 hidden fade-right hover-able">
                     <img src="<?= base_url('assets') ?> /dist/img/gallery-2.png" alt="Galeri Kedua">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 hidden fade-right hover-able">
                     <img src="<?= base_url('assets') ?> /dist/img/gallery-3.png" alt="Galeri Ketiga">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 hidden fade-right hover-able">
                     <img src="<?= base_url('assets') ?> /dist/img/gallery-4.png" alt="Galeri Keempat">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 hidden fade-right hover-able">
                     <img src="<?= base_url('assets') ?> /dist/img/gallery-5.png" alt="Galeri Kelima">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 hidden fade-right hover-able">
                     <img src="<?= base_url('assets') ?> /dist/img/gallery-6.png" alt="Galeri Keenam">
                 </div>
             </div>

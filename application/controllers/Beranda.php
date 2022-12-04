@@ -28,6 +28,6 @@ class Beranda extends CI_Controller
 
         curl_close($ch);
 
-        $this->load->view('v_beranda/index', $data);
+        $this->load->view('v_beranda/beranda', $data);
     }
 }
