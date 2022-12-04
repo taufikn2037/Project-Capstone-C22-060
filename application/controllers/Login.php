@@ -47,10 +47,10 @@ class Login extends CI_Controller
                 if (password_verify($password, $user['password__user'])) {
                     $data = [
                         'username__user' => $user['username__user'],
-                        'role_id' => $user['role_id']
+                        'id_role' => $user['id_role']
                     ];
                     $this->session->set_userdata($data);
-                    if ($user['role_id'] == 2) {
+                    if ($user['id_role'] == 2) {
                         redirect('user');
                     }
                 } else {
@@ -119,7 +119,7 @@ class Login extends CI_Controller
                 'username__user' => $this->input->post('username__user'),
                 'image' => 'default.jpg',
                 'password__user' => password_hash($this->input->post('password__user'), PASSWORD_DEFAULT),
-                'role_id' => 2,
+                'id_role' => 2,
                 'is_active' => 1,
                 'date_created' => time()
             ];
@@ -138,7 +138,7 @@ class Login extends CI_Controller
     public function logout()
     {
         $this->session->unset_userdata('username__user');
-        $this->session->unset_userdata('role_id');
+        $this->session->unset_userdata('id_role');
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Kamu telah keluar</div>');
         redirect('login');
