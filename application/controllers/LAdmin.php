@@ -47,12 +47,12 @@ class LAdmin extends CI_Controller
                 if (password_verify($user['password__admin'], $hpassword)) {
                     $data = [
                         'username__admin' => $user['username__admin'],
-                        'role_id' => $user['role_id']
+                        'id_role' => $user['id_role']
                     ];
                     $this->session->set_userdata($data);
-                    if ($user['role_id'] == 1) {
+                    if ($user['id_role'] == 1) {
                         redirect('admin');
-                    } else if ($user['role_id'] == 3) {
+                    } else if ($user['id_role'] == 3) {
                         redirect('petugas');
                     }
                 } else {
@@ -72,7 +72,7 @@ class LAdmin extends CI_Controller
     public function logout()
     {
         $this->session->unset_userdata('username__admin');
-        $this->session->unset_userdata('role_id');
+        $this->session->unset_userdata('id_role');
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Kamu telah keluar</div>');
         redirect('ladmin');
