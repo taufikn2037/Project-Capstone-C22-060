@@ -15,6 +15,8 @@ class Admin extends CI_Controller
     public function index()
     {
         $data['title'] = 'Dashboard';
+        $data['users'] = $this->db->get('users')->num_rows();
+        $data['pengaduan'] = $this->db->get('pengaduan')->num_rows();
         $data['admins'] = $this->db->get_where('admins', ['username__admin' =>
         $this->session->userdata('username__admin')])->row_array();
 
@@ -74,23 +76,25 @@ class Admin extends CI_Controller
         $this->load->view('components_admin/footer');
     }
 
-    public function tambah_petugas(){
-		$data['title'] = 'Tambah Data Petugas';
+    public function tambah_petugas()
+    {
+        $data['title'] = 'Tambah Data Petugas';
         $data['admins'] = $this->db->get_where('admins', ['username__admin' =>
         $this->session->userdata('username__admin')])->row_array();
 
-		$this->load->view('components_admin/header', $data);
+        $this->load->view('components_admin/header', $data);
         $this->load->view('components_admin/sidebar', $data);
         $this->load->view('v_admin/tambah_petugas', $data);
         $this->load->view('components_admin/footer');
-	}
+    }
 
-    public function tambah_petugas_aksi(){
+    public function tambah_petugas_aksi()
+    {
         $data = array(
             'name__admin' => $this->input->post('name__admin'),
             'username__admin' => $this->input->post('username__admin'),
             'password__admin' => $this->input->post('password__admin'),
-            'id_role' => 2,
+            'id_role' => 3,
             'is_active' => 1
         );
         $this->m_model->insert_data($data, 'admins');
@@ -98,33 +102,36 @@ class Admin extends CI_Controller
         redirect('admin/data_petugas');
     }
 
-    public function delete_masyarakat($id){
-		$where = array('id_user' => $id);
+    public function delete_masyarakat($id)
+    {
+        $where = array('id_user' => $id);
 
-		$this->m_model->delete($where, 'users');
-		$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Data Berhasil Dihapus<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-			redirect('admin/data_masyarakat');
-	}
+        $this->m_model->delete($where, 'users');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Data Berhasil Dihapus<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        redirect('admin/data_masyarakat');
+    }
 
-    public function delete_petugas($id){
-		$where = array('id_admin' => $id);
+    public function delete_petugas($id)
+    {
+        $where = array('id_admin' => $id);
 
-		$this->m_model->delete($where, 'admins');
-		$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Data Berhasil Dihapus<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-			redirect('admin/data_petugas');
-	}
+        $this->m_model->delete($where, 'admins');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Data Berhasil Dihapus<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        redirect('admin/data_petugas');
+    }
 
-    public function edit_petugas($id){
-		$data = array(
-            'id_admin' => $id, 
+    public function edit_petugas($id)
+    {
+        $data = array(
+            'id_admin' => $id,
             'name__admin' => $this->input->post('name__admin'),
             'username__admin' => $this->input->post('username__admin'),
             'password__admin' => $this->input->post('password__admin'),
-            'id_role' => 2,
+            'id_role' => 3,
             'is_active' => 1
-		);
-		$this->m_model->update_data($data, 'admins');
-		$this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">Data Berhasil Diubah<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-			redirect('admin/data_petugas');
-	}
+        );
+        $this->m_model->update_data($data, 'admins');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">Data Berhasil Diubah<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        redirect('admin/data_petugas');
+    }
 }

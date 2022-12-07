@@ -1,10 +1,11 @@
+<?= $this->session->flashdata('msg'); ?>
 <div class="card">
     <div class="card-body">
 
-        <?= form_open_multipart('user/tambah_pengaduan'); ?>
+        <?= form_open_multipart('user/edit/' . $pengaduan['id_pengaduan']); ?>
         <div class="form-group">
             <label for="isi_laporan">Isi Laporan</label>
-            <textarea class="form-control" name="isi_laporan" id="isi_laporan" rows="5"></textarea>
+            <textarea class="form-control" name="isi_laporan" id="isi_laporan" rows="5"><?= $pengaduan['isi_laporan'] ?></textarea>
         </div>
         <div class="form-group">
             <label for="foto">Foto</label>

@@ -143,9 +143,4 @@ class Login extends CI_Controller
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> Kamu telah keluar</div>');
         redirect('login');
     }
-
-    public function blocked()
-    {
-        echo 'access blocked';
-    }
 }

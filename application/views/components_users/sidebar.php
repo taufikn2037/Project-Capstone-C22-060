@@ -43,7 +43,7 @@
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="<?= base_url('index.php/user') ?>" class="nav-link">
+              <a href="<?= base_url('/user') ?>" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>Dashboard</p>
               </a>
@@ -59,13 +59,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?= base_url('index.php/user/data_pengaduan') ?>" class="nav-link">
+                  <a href="<?= base_url('/user/data_pengaduan') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Data Pengaduan</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('index.php/user/tambah_pengaduan') ?>" class="nav-link">
+                  <a href="<?= base_url('/user/tambah_pengaduan') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Tambah Pengaduan</p>
                   </a>
