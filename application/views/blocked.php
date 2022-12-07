@@ -6,8 +6,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="<?= base_url('assets') ?> /dist/css/login.css">
-  <link rel="stylesheet" href="<?= base_url('assets') ?> /dist/css/login_responsif.css">
   <link href="https://fonts.googleapis.com/css?family=Lora:700|Montserrat:200,400,600|Pacifico&amp;display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link href="http://localhost/suaraQita/assets/dist/css/blocked.css" rel="stylesheet">
