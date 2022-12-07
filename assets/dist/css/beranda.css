@@ -15,6 +15,11 @@ body {
     padding: 10px;
     font-weight: 600;
     font-size: large;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.35);
+}
+
+.nav-link {
+    transition: ease 0.5s;
 }
 
 .jumbotron {
@@ -63,11 +68,6 @@ section .row,
 #content-1 .about-image {
     width: 80%;
     height: auto;
-}
-
-#content-2,
-#content-4 {
-    background-color: rgb(248, 195, 0);
 }
 
 #content-2 img {
@@ -125,6 +125,11 @@ section .row,
     height: auto;
 }
 
+#content-2,
+#content-4 {
+    background-color: rgb(248, 195, 0);
+}
+
 footer img {
     width: 200px;
     height: auto;
@@ -169,11 +174,15 @@ footer img {
     transition: all 1s ease;
 }
 
-.hover-able:hover {
+.hover-able:hover,
+.hover-able:focus {
     transform: scale(1.1);
 }
 
-#content-3 a:hover {
+#content-3 a:hover,
+#content-3 a:focus,
+.nav-link:hover,
+.nav-link:focus {
     padding: 10px 40px;
     color: rgb(255, 255, 255);
     background-color: rgb(248, 195, 0);

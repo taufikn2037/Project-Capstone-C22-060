@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', cursive;
+    background-color: #373C4E;
+    height: 100%;
+}
+
+#daftar {
+    margin-top: 30px;
+}
+
+#login {
+    margin-top: 120px;
+}
+
+
+.container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 600px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.35);
+}
+
+#link_daftar,
+#link_login,
+#tombol_daftar,
+#tombol_login,
+#tombol_batal {
+    transition: ease 0.5s;
+    text-decoration: none;
+}
+
+#tombol_daftar:hover,
+#tombol_daftar:focus,
+#tombol_login:hover,
+#tombol_login:focus {
+    border: none;
+    padding: 10px 40px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(248, 195, 0);
+    border-radius: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.35);
+}
+
+#tombol_batal:hover,
+#tombol_batal:focus {
+    border: none;
+    padding: 10px 40px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(252, 63, 25);
+    border-radius: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.35);
+}
+
+#link_daftar:hover,
+#link_daftar:focus,
+#link_login:hover,
+#link_login:focus {
+    border: none;
+    padding: 10px 40px;
+    font-size: larger;
+    border-radius: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.35);
+
+}

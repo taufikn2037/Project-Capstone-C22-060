@@ -24,16 +24,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Beranda</a>
+                    <a class="nav-link" href="#jumbotron">Beranda</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#content-1">Tentang</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#content-3">Berita</a>
+                    <a class="nav-link" href="#content-2">Alur</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#content-2">Alur</a>
+                    <a class="nav-link" href="#content-3">Berita</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#content-4">Galeri</a>
@@ -44,10 +44,10 @@
     </nav>
 
     <!-- Jumbotron -->
-    <div class="jumbotron">
+    <div class="jumbotron" id="jumbotron">
         <div class="jumbotron-text d-flex flex-column justify-content-center align-items-center">
-            <h1 class="display-4 p-4 fw-bold">Selamat Datang <br>Di <span>Suara</span>Qita</h1>
-            <p class="lead border-3 border-top border-light">Sistem Pengaduan Masyarakat Kota Bandar Lampung.</p>
+            <h1 tabindex="0" class="display-4 p-4 fw-bold">Selamat Datang <br>Di <span>Suara</span>Qita</h1>
+            <p tabindex="0" class="lead border-3 border-top border-light">Sistem Pengaduan Masyarakat Kota Bandar Lampung.</p>
         </div>
     </div>
 
@@ -55,13 +55,13 @@
         <div class="container py-5">
             <div class="row g-4 py-2">
                 <div class="col-md-6 hidden fade-left">
-                    <h2 class="pb-2">Apa itu website Suara<span>Qita</span>?</h2>
-                    <p>Aplikasi SuaraQita merupakan aplikasi yang dapat
+                    <h2 tabindex="0" class="pb-2">Apa itu website Suara<span>Qita</span>?</h2>
+                    <p tabindex="0">Aplikasi SuaraQita merupakan aplikasi yang dapat
                         digunakan oleh masyarakat untuk menyampaikan
                         pengaduan atau keluhan dari pelayanan publik yang
                         ada.</p>
 
-                    <p>Aplikasi ini dapat diakses melalui website sehingga dapat
+                    <p tabindex="0">Aplikasi ini dapat diakses melalui website sehingga dapat
                         digunakan di perangkat apapun dan msayarakat dapat
                         melakukan pengaduan atau keluhan dimanapun dan
                         kapanpun.</p>
@@ -75,10 +75,10 @@
 
     <section class="py-5" id="content-2">
         <div class="container pb-4">
-            <h3 class="text-center py-5 fw-bold">Alur Pengaduan</h3>
+            <h3 tabindex="0" class="text-center py-5 fw-bold">Alur Pengaduan</h3>
             <div class="row row-cols-2 row-cols-xs-3 row-cols-lg-5 g-4 text-center">
                 <div class="col-sm hidden fade-up">
-                    <div class="box mx-auto hover-able">
+                    <div tabindex="0" class="box mx-auto hover-able">
                         <img class="pb-3" src="<?= base_url('assets') ?>/dist/img/alur-1.png" alt="Langkah Pertama">
                         <h5 class="fw-bold">Daftar/Masuk</h5>
                         <p> Daftar/Masuk terlebih
@@ -89,7 +89,7 @@
                 </div>
 
                 <div class="col-sm hidden fade-down">
-                    <div class="box mx-auto hover-able">
+                    <div tabindex="0" class="box mx-auto hover-able">
                         <img class="pb-3" src="<?= base_url('assets') ?> /dist/img/alur-2.png" alt="Langkah Kedua">
                         <h5 class="fw-bold">Tulis Laporan</h5>
                         <p> Laporkan keluhan atau
@@ -99,7 +99,7 @@
                 </div>
 
                 <div class="col-sm hidden fade-up">
-                    <div class="box mx-auto hover-able">
+                    <div tabindex="0" class="box mx-auto hover-able">
                         <img class="pb-3" src="<?= base_url('assets') ?> /dist/img/alur-3.png" alt="Langkah Ketiga">
                         <h5 class="fw-bold">Tindak Lanjut</h5>
                         <p> Laporan Anda akan
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="col-sm hidden fade-down">
-                    <div class="box mx-auto hover-able">
+                    <div tabindex="0" class="box mx-auto hover-able">
                         <img class="pb-3" src="<?= base_url('assets') ?> /dist/img/alur-4.png" alt="Langkah Keempat">
                         <h5 class="fw-bold">Tanggapan</h5>
                         <p> Anda akan mendapatkan
@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="col-sm hidden fade-up">
-                    <div class="box mx-auto hover-able">
+                    <div tabindex="0" class="box mx-auto hover-able">
                         <img class="pb-3" src="<?= base_url('assets') ?> /dist/img/alur-5.png" alt="Langkah Kelima">
                         <h5 class="fw-bold">Selesai</h5>
                         <p> Laporan Anda akan terus
@@ -134,7 +134,7 @@
 
     <section class="py-5" id="content-3">
         <div class="container-lg py-3">
-            <h3 class="text-center py-4 fw-bold">Berita</h3>
+            <h3 tabindex="0" class="text-center py-4 fw-bold">Berita</h3>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
 
                 <?php $i = 0;
@@ -144,7 +144,7 @@
                         <div class="card h-100 shadow-sm hover-able">
                             <img class="card-img-top" src="<?= $value['urlToImage'] ?>" onerror="this.src='<?= base_url('assets'); ?> /dist/img/berita-default.png'" alt="Preview Gambar Berita">
                             <div class="card-body">
-                                <h5 class="card-title"><?= $value['title']  ?></h5>
+                                <h5 tabindex="0" class="card-title"><?= $value['title']  ?></h5>
                                 <h6 class="card-subtitle py-2 text-muted">
                                     <?php  
                                         $publishedAt = explode("T", $value['publishedAt']);
@@ -152,7 +152,15 @@
                                         echo $newDateFormat;
                                     ?>
                                 </h6>
-                                <p class="card-text"><?= $value['description']  ?></p>
+                                <p class="card-text">
+                                    <?php if ($value['description'] === null ) {
+                                            echo 'Klik tombol "Read More" dibawah untuk membaca lanjut mengenai ' 
+                                            . $value['title'];
+                                        } {
+                                            echo $value['description'];
+                                        }; 
+                                    ?>
+                                </p>
                                 <a href="<?= $value['url']  ?>" class="float-end" aria-label="Read More" role="button" target="_blank">Read More</a>
                             </div>
                         </div>
@@ -167,24 +175,24 @@
 
     <section class="py-5" id="content-4">
         <div class="container-lg pb-4">
-            <h3 class="text-center py-4 fw-bold">Galeri</h3>
+            <h3 tabindex="0" class="text-center py-4 fw-bold">Galeri</h3>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-                <div class="col-md-4 hidden fade-right hover-able">
+                <div tabindex="0" class="col-md-4 hidden fade-right hover-able">
                     <img src="<?= base_url('assets') ?> /dist/img/gallery-1.png" alt="Galeri Pertama">
                 </div>
-                <div class="col-md-4 hidden fade-right hover-able">
+                <div tabindex="0" class="col-md-4 hidden fade-right hover-able">
                     <img src="<?= base_url('assets') ?> /dist/img/gallery-2.png" alt="Galeri Kedua">
                 </div>
-                <div class="col-md-4 hidden fade-right hover-able">
+                <div tabindex="0" class="col-md-4 hidden fade-right hover-able">
                     <img src="<?= base_url('assets') ?> /dist/img/gallery-3.png" alt="Galeri Ketiga">
                 </div>
-                <div class="col-md-4 hidden fade-right hover-able">
+                <div tabindex="0" class="col-md-4 hidden fade-right hover-able">
                     <img src="<?= base_url('assets') ?> /dist/img/gallery-4.png" alt="Galeri Keempat">
                 </div>
-                <div class="col-md-4 hidden fade-right hover-able">
+                <div tabindex="0" class="col-md-4 hidden fade-right hover-able">
                     <img src="<?= base_url('assets') ?> /dist/img/gallery-5.png" alt="Galeri Kelima">
                 </div>
-                <div class="col-md-4 hidden fade-right hover-able">
+                <div tabindex="0" class="col-md-4 hidden fade-right hover-able">
                     <img src="<?= base_url('assets') ?> /dist/img/gallery-6.png" alt="Galeri Keenam">
                 </div>
             </div>
