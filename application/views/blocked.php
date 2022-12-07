@@ -11,17 +11,12 @@
   <link href="http://localhost/suaraQita/assets/dist/css/blocked.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
-
 <body id="page-top">
-
   <style>
     body {
       font-family: Montserrat;
     }
   </style>
-
-
-
   <!-- 404 Error Text -->
   <div class="text-center">
     <div class="error mx-auto" data-text="403">403</div>
@@ -29,7 +24,6 @@
     <p class="text-gray-500 mb-0">Silahkan kembali ke halaman sebelumnya</p>
     <p><a href="javascript:history.back()" class="btn btn-success"> Kembali </a></p>
   </div>
-
   </div>
   <!-- /.container-fluid -->
 </body>
