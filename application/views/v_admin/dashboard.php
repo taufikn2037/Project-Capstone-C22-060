@@ -2,7 +2,7 @@
     <div class="col-lg-3 col-6">
         <div class="small-box bg-dark">
             <div class="inner">
-                <h3>0</h3>
+                <h3><?= number_format($pengaduan) ?></h3>
                 <p class="text-warning">Data Pengaduan</p>
             </div>
         </div>
@@ -34,7 +34,7 @@
     <div class="col-lg-3 col-6">
         <div class="small-box bg-dark">
             <div class="inner">
-                <h3>0</h3>
+                <h3><?= number_format($users) ?></h3>
                 <p class="text-warning">Data Pengguna</p>
             </div>
         </div>

@@ -9,6 +9,11 @@ body {
     background-color: #373C4E;
 }
 
+main {
+    min-height: 100hv;
+    position: relative;
+}
+
 small {
     margin-left: 100px;
 }
@@ -35,6 +40,7 @@ form {
     padding: 10px 10px 10px 10px;
     align-items: center;
     justify-content: center;
+    /* margin-bottom: 198px; */
 }
 
 .input {
@@ -156,4 +162,12 @@ form {
 
 #batal:hover {
     background-color: #970000;
+}
+
+.text-center {
+    background-color: white;
+}
+
+.logo img {
+    width: auto;
 }

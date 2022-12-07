@@ -57,6 +57,12 @@
       </form>
     </section>
   </main>
+  <footer>
+    <div class="logo text-center">
+      <img src="<?= base_url('assets') ?> /dist/img/logo-image.png" alt="logo image">
+    </div>
+  </footer>
 </body>
+
 
 </html>

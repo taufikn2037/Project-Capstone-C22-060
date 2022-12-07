@@ -43,14 +43,14 @@
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="<?= base_url('index.php/petugas') ?>" class="nav-link">
+              <a href="<?= base_url('/petugas') ?>" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>Dashboard</p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="<?= base_url('index.php/petugas/kelola_pengaduan') ?>" class="nav-link">
+              <a href="<?= base_url('/petugas/kelola_pengaduan') ?>" class="nav-link">
                 <i class="nav-icon fas fa-table"></i>
                 <p>Kelola Pengaduan</p>
               </a>

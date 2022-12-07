@@ -1,6 +1,6 @@
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
-
+  <?php if ($this->session->userdata('id_role') == '1') : ?>
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -43,21 +43,21 @@
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-              <a href="<?= base_url('index.php/admin') ?>" class="nav-link">
+              <a href="<?= base_url('/admin') ?>" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>Dashboard</p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="<?= base_url('index.php/admin/kelola_pengaduan') ?>" class="nav-link">
+              <a href="<?= base_url('/admin/kelola_pengaduan') ?>" class="nav-link">
                 <i class="nav-icon fas fa-table"></i>
                 <p>Kelola Pengaduan</p>
               </a>
             </li>
 
             <li class="nav-item">
-              <a href="<?= base_url('index.php/admin/ekspor_data') ?>" class="nav-link">
+              <a href="<?= base_url('/admin/ekspor_data') ?>" class="nav-link">
                 <i class="nav-icon fas fa-share-square"></i>
                 <p>Ekspor Data</p>
               </a>
@@ -73,13 +73,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?= base_url('index.php/admin/data_masyarakat') ?>" class="nav-link">
+                  <a href="<?= base_url('/admin/data_masyarakat') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Masyarakat</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('index.php/admin/data_petugas') ?>" class="nav-link">
+                  <a href="<?= base_url('/admin/data_petugas') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Petugas</p>
                   </a>
@@ -111,3 +111,5 @@
 
       <div class="content">
         <div class="container-fluid">
+        <?php endif; ?>
+        
