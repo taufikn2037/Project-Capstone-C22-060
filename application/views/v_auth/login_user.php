@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
   <link href="<?php echo base_url();?>assets/dist/img/logo.png" rel="icon">
-  <link rel="stylesheet" href="<?= base_url('assets') ?> /dist/css/daftar.css">
+  <link rel="stylesheet" href="<?= base_url('assets') ?> /dist/css/auth.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
