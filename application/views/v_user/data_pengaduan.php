@@ -41,8 +41,8 @@
                         <td class="text-center">
                             <a href="<?= base_url('user/pengaduan_detail/' . $dp['id_pengaduan']) ?>" class="btn btn-success"><i class="fas fa-fw fa-eye"></i></a>
                             <?php if ($dp['status'] == '0') : ?>
-                                <a href="<?= base_url('user/pengaduan_batal/z' . $dp['id_pengaduan']) ?>" class="btn btn-warning">Hapus</a>
-                                <a href="<?= base_url('user/edit/' . $dp['id_pengaduan']) ?>" class="btn btn-info">Edit</a>
+                                <a href="<?= base_url('user/pengaduan_batal/z' . $dp['id_pengaduan']) ?>" class="btn btn-danger">Hapus</a>
+                                <a href="<?= base_url('user/edit/' . $dp['id_pengaduan']) ?>" class="btn btn-warning">Edit</a>
                         </td>
                     <?php else : ?>
                         <td><small>Tidak ada aksi</small></td>

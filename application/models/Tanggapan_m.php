@@ -12,6 +12,3 @@ class Tanggapan_m extends CI_Model {
 	}
 
 }
-
-/* End of file Tanggapan_m.php */
-/* Location: ./application/models/Tanggapan_m.php */
