@@ -141,7 +141,6 @@ class Admin extends CI_Controller
     public function pengaduan_detail()
     {
         $id = htmlspecialchars($this->input->post('id',true));
-		$cek_data = $this->db->get_where('pengaduan',['id_pengaduan' => $id])->row_array();
 
         $data['title'] = 'Pengaduan Detail';
         $data['admins'] = $this->db->get_where('admins', ['username__admin' =>
@@ -152,5 +151,42 @@ class Admin extends CI_Controller
         $this->load->view('components_admin/sidebar', $data);
         $this->load->view('v_admin/p_detail', $data);
         $this->load->view('components_admin/footer');
+    }
+
+    public function tambah_tanggapan()
+    {
+        $id_pengaduan = htmlspecialchars($this->input->post('id',true));
+		
+        $petugas = $this->db->get_where('admins',['username__admin' => $this->session->userdata('username__admin')])->row_array();
+
+        $params = [
+            'id_pengaduan'		=> $id_pengaduan,
+            'tgl_tanggapan'		=> date('Y-m-d'),
+            'tanggapan'			=> htmlspecialchars($this->input->post('tanggapan',true)),
+            'id_admin'		    => $petugas['id_admin'],
+        ];
+
+        $menanggapi = $this->db->insert('tanggapan',$params);
+
+        if ($menanggapi) {
+            $params = [
+                'status' => $this->input->post('status',true),
+            ];
+
+            $update_status_pengaduan = $this->db->update('pengaduan',$params,['id_pengaduan' =>  $id_pengaduan]);
+
+            if ($update_status_pengaduan) {
+                $this->session->set_flashdata('pesan','<div class="alert alert-success alert-dismissible fade show" role="alert">Berhasil Menanggapi<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+				redirect('/admin/pengaduan_masuk');
+            }
+            else {
+                $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">Gagal Update<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+				redirect('/admin/pengaduan_masuk');
+            }
+        } 
+        else {
+            $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">Gagal Menanggapi<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+			redirect('/admin/pengaduan_masuk');
+        }           
     }
 }
