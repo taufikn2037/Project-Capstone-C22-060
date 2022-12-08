@@ -17,6 +17,7 @@ class User extends CI_Controller
         $users = $this->db->get_where('users', ['username__user' =>
         $this->session->userdata('username__user')])->row_array();
         $data['pengaduan'] = $this->Pengaduan_m->data_pengaduan_users_id_user($users['id_user'])->num_rows();
+        $data['pengaduan_selesai'] = $this->db->get_where('pengaduan',['status' => 'selesai'])->num_rows();
         $data['users'] = $this->db->get_where('users', ['username__user' =>
         $this->session->userdata('username__user')])->row_array();
 
