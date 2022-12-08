@@ -41,7 +41,7 @@
                             ?>
                         </td>
                         <td>
-                            <?= form_open('Admin/TanggapanController/tanggapan_detail'); ?>
+                            <?= form_open('/admin/pengaduan_detail'); ?>
 								<input type="hidden" name="id" value="<?= $dp['id_pengaduan'] ?>">
 								<button class="btn btn-success" name="terima">Lihat Detail</button>
 							<?= form_close(); ?>

@@ -28,18 +28,6 @@ class Admin extends CI_Controller
         $this->load->view('components_admin/footer');
     }
 
-    public function kelola_pengaduan()
-    {
-        $data['title'] = 'Kelola Pengaduan';
-        $data['admins'] = $this->db->get_where('admins', ['username__admin' =>
-        $this->session->userdata('username__admin')])->row_array();
-
-        $this->load->view('components_admin/header', $data);
-        $this->load->view('components_admin/sidebar', $data);
-        $this->load->view('v_admin/kelola');
-        $this->load->view('components_admin/footer');
-    }
-
     public function ekspor_data()
     {
         $data['title'] = 'Ekspor Data';
@@ -147,6 +135,22 @@ class Admin extends CI_Controller
         $this->load->view('components_admin/header', $data);
         $this->load->view('components_admin/sidebar', $data);
         $this->load->view('v_admin/p_masuk', $data);
+        $this->load->view('components_admin/footer');
+    }
+
+    public function pengaduan_detail()
+    {
+        $id = htmlspecialchars($this->input->post('id',true));
+		$cek_data = $this->db->get_where('pengaduan',['id_pengaduan' => $id])->row_array();
+
+        $data['title'] = 'Pengaduan Detail';
+        $data['admins'] = $this->db->get_where('admins', ['username__admin' =>
+        $this->session->userdata('username__admin')])->row_array();
+        $data['data_pengaduan'] = $this->Pengaduan_m->data_pengaduan_users_id(htmlspecialchars($id))->row_array();
+
+        $this->load->view('components_admin/header', $data);
+        $this->load->view('components_admin/sidebar', $data);
+        $this->load->view('v_admin/p_detail', $data);
         $this->load->view('components_admin/footer');
     }
 }

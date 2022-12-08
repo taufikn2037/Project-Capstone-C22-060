@@ -81,6 +81,3 @@ class Pengaduan_m extends CI_Model
 		return $this->db->get();
 	}
 }
-
-/* End of file Pengaduan_m.php */
-/* Location: ./application/models/Pengaduan_m.php */
