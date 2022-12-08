@@ -41,7 +41,7 @@ class Pengaduan_m extends CI_Model
 
 	public function data_pengaduan_users_selesai()
 	{
-		$this->db->select('pengaduan.*,users.name__user');
+		$this->db->select('pengaduan.*,users.name__user, users.no_telepon');
 		$this->db->from($this->table);
 		$this->db->join('users', 'users.id_user = pengaduan.id_user', 'inner');
 		$this->db->where('status', 'selesai');
@@ -50,7 +50,7 @@ class Pengaduan_m extends CI_Model
 
 	public function data_pengaduan_users_tolak()
 	{
-		$this->db->select('pengaduan.*,users.name__user');
+		$this->db->select('pengaduan.*,users.name__user, users.no_telepon');
 		$this->db->from($this->table);
 		$this->db->join('users', 'users.id_user = pengaduan.id_user', 'inner');
 		$this->db->where('status', 'tolak');

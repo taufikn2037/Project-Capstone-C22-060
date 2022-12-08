@@ -19,7 +19,7 @@
         <div class="small-box bg-dark">
             <div class="inner">
                 <h3>0</h3>
-                <p class="text-warning">Pengaduan Ditanggapi</p>
+                <p class="text-warning">Pengaduan Ditolak</p>
             </div>
         </div>
     </div>

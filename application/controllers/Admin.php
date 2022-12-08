@@ -19,6 +19,9 @@ class Admin extends CI_Controller
         $data['title'] = 'Dashboard';
         $data['users'] = $this->db->get('users')->num_rows();
         $data['pengaduan'] = $this->db->get('pengaduan')->num_rows();
+        $data['pengaduan_proses'] = $this->db->get_where('pengaduan',['status' => 'proses'])->num_rows();
+	    $data['pengaduan_selesai'] = $this->db->get_where('pengaduan',['status' => 'selesai'])->num_rows();
+        $data['pengaduan_tolak'] = $this->db->get_where('pengaduan',['status' => 'tolak'])->num_rows();
         $data['admins'] = $this->db->get_where('admins', ['username__admin' =>
         $this->session->userdata('username__admin')])->row_array();
 
@@ -221,5 +224,31 @@ class Admin extends CI_Controller
             $this->session->set_flashdata('pesan','<div class="alert alert-danger alert-dismissible fade show" role="alert">Pengaduan Gagal Diselesaikan<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 			redirect('/admin/pengaduan_proses');
         }
+    }
+
+    public function pengaduan_selesai()
+    {
+        $data['title'] = 'Pengaduan Selesai';
+        $data['admins'] = $this->db->get_where('admins', ['username__admin' =>
+        $this->session->userdata('username__admin')])->row_array();
+		$data['data_pengaduan'] = $this->Pengaduan_m->data_pengaduan_users_selesai()->result_array();
+
+        $this->load->view('components_admin/header', $data);
+        $this->load->view('components_admin/sidebar', $data);
+        $this->load->view('v_admin/p_selesai', $data);
+        $this->load->view('components_admin/footer');
+    }
+
+    public function pengaduan_tolak()
+    {
+        $data['title'] = 'Pengaduan Ditolak';
+        $data['admins'] = $this->db->get_where('admins', ['username__admin' =>
+        $this->session->userdata('username__admin')])->row_array();
+        $data['data_pengaduan'] = $this->Pengaduan_m->data_pengaduan_users_tolak()->result_array();
+
+        $this->load->view('components_admin/header', $data);
+        $this->load->view('components_admin/sidebar', $data);
+        $this->load->view('v_admin/p_tolak', $data);
+        $this->load->view('components_admin/footer');
     }
 }
