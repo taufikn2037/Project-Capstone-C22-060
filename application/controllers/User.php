@@ -17,6 +17,7 @@ class User extends CI_Controller
         $users = $this->db->get_where('users', ['username__user' =>
         $this->session->userdata('username__user')])->row_array();
         $data['pengaduan'] = $this->Pengaduan_m->data_pengaduan_users_id_user($users['id_user'])->num_rows();
+        $data['pengaduan_selesai'] = $this->db->get_where('pengaduan',['status' => 'selesai'])->num_rows();
         $data['users'] = $this->db->get_where('users', ['username__user' =>
         $this->session->userdata('username__user')])->row_array();
 
@@ -79,15 +80,11 @@ class User extends CI_Controller
                 $resp = $this->Pengaduan_m->create($params);
 
                 if ($resp) :
-                    $this->session->set_flashdata('msg', '<div class="alert alert-primary" role="alert">
-						Laporan berhasil dibuat
-						</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success alert-dismissible fade show" role="alert">Laporan Berhasil Dibuat<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 
                     redirect('user/data_pengaduan');
                 else :
-                    $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert">
-						Laporan gagal dibuat!
-						</div>');
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger alert-dismissible fade show" role="alert">Laporan Gagal Dibuat<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 
                     redirect('user/tambah_pengaduan');
                 endif;
@@ -208,7 +205,7 @@ class User extends CI_Controller
 
                     else :
 
-                        // hapus file
+                        
                         $path = './assets/uploads/' . $cek_data['foto'];
                         unlink($path);
 

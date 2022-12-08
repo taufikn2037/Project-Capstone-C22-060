@@ -89,6 +89,12 @@ class Login extends CI_Controller
         );
 
         $this->form_validation->set_rules(
+            'no_telepon',
+            'Telepon',
+            'required|trim'
+        );
+
+        $this->form_validation->set_rules(
             'email__user',
             'Email',
             'required|trim|valid_email|is_unique[users.email__user]',
@@ -116,6 +122,7 @@ class Login extends CI_Controller
                 'name__user' => $this->input->post('name__user'),
                 'email__user' => $this->input->post('email__user'),
                 'nik__user' => $this->input->post('nik__user'),
+                'no_telepon' => $this->input->post('no_telepon'),
                 'username__user' => $this->input->post('username__user'),
                 'image' => 'default.jpg',
                 'password__user' => password_hash($this->input->post('password__user'), PASSWORD_DEFAULT),

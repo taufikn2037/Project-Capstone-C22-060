@@ -10,8 +10,8 @@
     <div class="col-lg-3 col-6">
         <div class="small-box bg-dark">
             <div class="inner">
-                <h3>0</h3>
-                <p class="text-warning">Pengaduan Belum Selesai</p>
+                <h3><?= number_format($pengaduan_selesai) ?></h3>
+                <p class="text-warning">Pengaduan Selesai</p>
             </div>
         </div>
     </div>

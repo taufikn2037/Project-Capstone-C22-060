@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Des 2022 pada 07.00
--- Versi server: 10.4.13-MariaDB
--- Versi PHP: 7.4.7
+-- Waktu pembuatan: 08 Des 2022 pada 21.23
+-- Versi server: 10.4.20-MariaDB
+-- Versi PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,7 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`id_admin`, `name__admin`, `username__admin`, `password__admin`, `id_role`, `is_active`) VALUES
 (1, 'Administrator', 'admin', 'admin123', 1, 1),
-(2, 'Taufik', 'taufik124', '12345', 3, 1),
+(2, 'Taufik', 'taufik123', '12345', 3, 1),
 (4, 'Kevin', 'kevin1', '123456', 3, 1);
 
 -- --------------------------------------------------------
@@ -65,10 +65,11 @@ CREATE TABLE `pengaduan` (
 --
 
 INSERT INTO `pengaduan` (`id_pengaduan`, `tgl_pengaduan`, `id_user`, `isi_laporan`, `foto`, `status`) VALUES
-(4, '2022-12-06', 8, 'asdsadadada', '6baf8693b5f014e3bce5f26118ccf9d3.jpg', '0'),
-(5, '2022-12-06', 9, 'asdsadasdad', 'c41de2ee5f2a41d734e56aa33065e65b.jpg', '0'),
-(6, '2022-12-06', 9, 'asdsadaaaaaaaaaaaaaaaaaaaaaaaaa', '1d1ca6a335ad928f9f09bd87a22ca046.png', '0'),
-(7, '2022-12-07', 8, 'makan', '979e3dca3cc19d6b6cd95d0e681ef122.png', '0');
+(4, '2022-12-06', 8, 'asdsadadada', '6baf8693b5f014e3bce5f26118ccf9d3.jpg', 'tolak'),
+(7, '2022-12-07', 8, 'makan', '979e3dca3cc19d6b6cd95d0e681ef122.png', '0'),
+(8, '2022-12-07', 6, 'tes', '34ca2b86a70077bf31ff9a22afb71467.jpeg', 'proses'),
+(9, '2022-12-08', 6, 'alooo', '7710aa860433620ccbc19f691ef134c5.jpg', 'selesai'),
+(10, '2022-12-08', 6, 'banjir', '81bc2ee33dd362d656df831c5c7e7085.jpeg', '0');
 
 -- --------------------------------------------------------
 
@@ -84,6 +85,15 @@ CREATE TABLE `tanggapan` (
   `id_admin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `tanggapan`
+--
+
+INSERT INTO `tanggapan` (`id_tanggapan`, `id_pengaduan`, `tgl_tanggapan`, `tanggapan`, `id_admin`) VALUES
+(1, 8, '2022-12-08', 'oke', 1),
+(2, 9, '2022-12-08', 'okee', 1),
+(3, 4, '2022-12-08', 'aaa', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -96,6 +106,7 @@ CREATE TABLE `users` (
   `email__user` varchar(128) NOT NULL,
   `username__user` varchar(128) NOT NULL,
   `nik__user` int(16) NOT NULL,
+  `no_telepon` varchar(13) NOT NULL,
   `password__user` varchar(255) NOT NULL,
   `id_role` int(11) NOT NULL,
   `is_active` int(1) NOT NULL,
@@ -107,10 +118,12 @@ CREATE TABLE `users` (
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id_user`, `name__user`, `email__user`, `username__user`, `nik__user`, `password__user`, `id_role`, `is_active`, `date_created`, `image`) VALUES
-(6, 'Taufik Nurhidayat', 'taufik@gmail.com', 'taufik2037', 222222, '$2y$10$0sI9oBC9dFgQOCTjs7wx9O1304nLKSYzCkykPXZSDIaiMbqj9CKKS', 2, 1, 1669907396, 'default.jpg'),
-(8, 'Kevin Jonathan', 'kevin@gmail.com', 'kevin', 123456789, '$2y$10$LFD5b4caV4OH14QZoOsI4uI2vzYbwJAoKpTTd.vvFoilnRtkzLWb2', 2, 1, 1670234148, 'default.jpg'),
-(9, 'Jonathan', 'jona@gmail.com', 'jona', 123123123, '$2y$10$Nhk5NFQt9p1.FzbNQs4LV.sLOpI7ugtcyRmbrxQ1sFiyIVTPhdQ5y', 2, 1, 1670336334, 'default.jpg');
+INSERT INTO `users` (`id_user`, `name__user`, `email__user`, `username__user`, `nik__user`, `no_telepon`, `password__user`, `id_role`, `is_active`, `date_created`, `image`) VALUES
+(6, 'Taufik Nurhidayat', 'taufik@gmail.com', 'taufik2037', 222222, '082186687337', '$2y$10$0sI9oBC9dFgQOCTjs7wx9O1304nLKSYzCkykPXZSDIaiMbqj9CKKS', 2, 1, 0, 'default.jpg'),
+(8, 'Kevin Jonathan', 'kevin@gmail.com', 'kevin', 123456789, '0821', '$2y$10$LFD5b4caV4OH14QZoOsI4uI2vzYbwJAoKpTTd.vvFoilnRtkzLWb2', 2, 1, 0, 'default.jpg'),
+(9, 'Jonathan', 'jona@gmail.com', 'jona', 123123123, '0821', '$2y$10$Nhk5NFQt9p1.FzbNQs4LV.sLOpI7ugtcyRmbrxQ1sFiyIVTPhdQ5y', 2, 1, 0, 'default.jpg'),
+(10, 'topik', 'taufik.mesuji@gmail.com', 'topik', 1811, '9831', '$2y$10$0QIALyeMk9Oj/Z4O9uqwLuV8OEWe21S16xcjRKy7bAfMrmpwO368i', 2, 1, 0, 'default.jpg'),
+(11, 'tt', 'taufii@gmail.com', 'tt', 1221, '0899', '$2y$10$Rd3Fw0VLBSwOkLm732iRbu9nlvmUVl8Vg1UFw/od3wG7uoAlJPgki', 2, 1, 0, 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -185,19 +198,19 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT untuk tabel `pengaduan`
 --
 ALTER TABLE `pengaduan`
-  MODIFY `id_pengaduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_pengaduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `tanggapan`
 --
 ALTER TABLE `tanggapan`
-  MODIFY `id_tanggapan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tanggapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `users_role`

@@ -10,8 +10,4 @@ class Tanggapan_m extends CI_Model {
 	{
 		return $this->db->insert($this->table, $data);
 	}
-
 }
-
-/* End of file Tanggapan_m.php */
-/* Location: ./application/models/Tanggapan_m.php */

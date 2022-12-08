@@ -51,6 +51,14 @@
           </div>
 
           <div class="form-group row py-2">
+            <label for="no_telepon" class="col-sm-4 col-form-label">No. Telepon</label>
+            <div class="col-sm-8">
+              <input type="number" class="form-control" id="no_telepon" name="no_telepon" placeholder="Nomor Telepon Aktif" value="<?= set_value('no_telepon'); ?>">
+            </div>
+            <?= form_error('no_telepon', '<small class="text-danger pl-3">', '</small>') ?>
+          </div>
+
+          <div class="form-group row py-2">
             <label for="password__user" class="col-sm-4 col-form-label">Password</label>
             <div class="col-sm-8">
               <input type="password" class="form-control" id="password__user" name="password__user" placeholder="Password yang akan Anda gunakan">
