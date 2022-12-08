@@ -9,6 +9,8 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_model');
+        $this->load->model('Tanggapan_m');
+		$this->load->model('Pengaduan_m');
         is_logged_in_admin();
     }
 
@@ -133,5 +135,18 @@ class Admin extends CI_Controller
         $this->m_model->update_data($data, 'admins');
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">Data Berhasil Diubah<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         redirect('admin/data_petugas');
+    }
+
+    public function pengaduan_masuk()
+    {
+        $data['title'] = 'Pengaduan Masuk';
+        $data['admins'] = $this->db->get_where('admins', ['username__admin' =>
+        $this->session->userdata('username__admin')])->row_array();
+		$data['data_pengaduan'] = $this->Pengaduan_m->data_pengaduan()->result_array();
+
+        $this->load->view('components_admin/header', $data);
+        $this->load->view('components_admin/sidebar', $data);
+        $this->load->view('v_admin/p_masuk', $data);
+        $this->load->view('components_admin/footer');
     }
 }

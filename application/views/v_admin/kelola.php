@@ -4,15 +4,17 @@
             <thead>
                 <tr class="text-center">
                     <th>No.</th>
-                    <th>Tanggal</th>
                     <th>NIK</th>
                     <th>Nama</th>
+                    <th>No. Telepon</th>
                     <th>Isi Laporan</th>
                     <th>Foto</th>
+                    <th>Tgl. Pengaduan</th>
                     <th>Status</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
+                
         </table>
     </div>
 </div>

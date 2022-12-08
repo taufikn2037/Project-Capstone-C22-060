@@ -14,7 +14,7 @@ class Pengaduan_m extends CI_Model
 
 	public function data_pengaduan()
 	{
-		$this->db->select('pengaduan.*,users.id_user');
+		$this->db->select('pengaduan.*,users.name__user, users.no_telepon');
 		$this->db->from($this->table);
 		$this->db->join('users', 'users.id_user = pengaduan.id_user', 'inner');
 		$this->db->where('status', '0');
