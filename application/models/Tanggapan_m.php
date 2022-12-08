@@ -10,5 +10,4 @@ class Tanggapan_m extends CI_Model {
 	{
 		return $this->db->insert($this->table, $data);
 	}
-
 }
