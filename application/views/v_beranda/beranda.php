@@ -135,7 +135,7 @@
     <section class="py-5" id="content-3">
         <div class="container-lg py-3">
             <h3 tabindex="0" class="text-center py-4 fw-bold">Berita</h3>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-5">
 
                 <?php $i = 0;
                 foreach ($articles as $value) { ?>
