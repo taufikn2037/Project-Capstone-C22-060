@@ -1,4 +1,3 @@
-console.log("stupid");
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
