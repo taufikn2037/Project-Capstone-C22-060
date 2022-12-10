@@ -49,7 +49,7 @@
               </a>
             </li>
 
-            <<li class="nav-item">
+            <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
@@ -59,32 +59,32 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?= base_url('/admin/pengaduan_masuk') ?>" class="nav-link">
+                  <a href="<?= base_url('/petugas/pengaduan_masuk') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Pengaduan Masuk</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('/admin/pengaduan_proses') ?>" class="nav-link">
+                  <a href="<?= base_url('/petugas/pengaduan_proses') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Pengaduan Proses</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('/admin/pengaduan_tolak') ?>" class="nav-link">
+                  <a href="<?= base_url('/petugas/pengaduan_tolak') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Pengaduan Ditolak</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('/admin/pengaduan_selesai') ?>" class="nav-link">
+                  <a href="<?= base_url('/petugas/pengaduan_selesai') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Pengaduan Selesai</p>
                   </a>
                 </li>
               </ul>
             </li>
-            
+
           </ul>
         </nav>
       </div>

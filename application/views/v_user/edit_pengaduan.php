@@ -12,7 +12,7 @@
             <input type="file" class="form-control-file border border-secondary rounded" name="foto" id="foto">
         </div>
         <button type="reset" value="reset" class="btn btn-danger">Reset</button>
-        <a href="javascript:history.back()" class="btn btn-warning">Kembali</a>
+        <a href="/suaraQita/user/data_pengaduan" class="btn btn-warning">Kembali</a>
         <button type="submit" value="submit" class="btn btn-primary">Simpan</button>
         <?php form_close(); ?>
     </div>

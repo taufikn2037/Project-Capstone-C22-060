@@ -73,6 +73,13 @@
               </ul>
             </li>
 
+            <li class="nav-item">
+              <a href="<?= base_url('/user/profile') ?>" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p>Profile</p>
+              </a>
+            </li>
+
           </ul>
         </nav>
       </div>

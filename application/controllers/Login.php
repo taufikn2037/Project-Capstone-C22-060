@@ -128,7 +128,7 @@ class Login extends CI_Controller
                 'password__user' => password_hash($this->input->post('password__user'), PASSWORD_DEFAULT),
                 'id_role' => 2,
                 'is_active' => 1,
-                'date_created' => time()
+                'date_created' => date('Y-m-d')
             ];
 
             $this->db->insert('users', $data);
