@@ -8,12 +8,22 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?php echo base_url();?>assets/dist/img/logo.png" rel="icon">
   <link rel="stylesheet" href="<?= base_url('assets') ?> /dist/css/auth.css">
+  <script defer src="<?= base_url('assets') ?> /dist/js/pages/hiddenElement.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 
 <body>
-    <div class="container" id="daftar">
+  <section class="text-lg-start h-100 hidden fade-down" id="daftar">
+    <div class="card mb-3 h-100">
+    <div class="row g-0 d-flex align-items-center h-100">
+      <div class="col-lg-4 d-none d-lg-flex">
+        <img src="<?php echo base_url();?>assets/dist/img/auth-image.png" alt="SuaraQita logo"
+          class="w-100 daftar-image" />
+      </div>
+      <div class="col-lg-8">
+        <div class="card-body py-5 px-md-5">
+
         <form class="user" method="POST" action="<?= base_url('login/daftar'); ?>">
           <div class="title">
             <h1>Daftar</h1>
@@ -98,7 +108,13 @@
           </div>
 
         </form>
+
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
 </body>
 
 

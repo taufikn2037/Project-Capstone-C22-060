@@ -9,7 +9,7 @@
     <link href="<?php echo base_url();?>assets/dist/img/logo.png" rel="icon">
     <link rel="stylesheet" href="<?= base_url('assets') ?> /dist/css/beranda.css">
     <link rel="stylesheet" href="<?= base_url('assets') ?> /dist/css/beranda_responsif.css">
-    <script defer src="<?= base_url('assets') ?> /dist/js/pages/beranda.js"></script>
+    <script defer src="<?= base_url('assets') ?> /dist/js/pages/hiddenElement.js"></script>
     <title>Homepage SuaraQita</title>
 </head>
 
