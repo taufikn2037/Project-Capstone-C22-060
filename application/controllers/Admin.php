@@ -36,6 +36,7 @@ class Admin extends CI_Controller
         $data['title'] = 'Ekspor Data';
         $data['admins'] = $this->db->get_where('admins', ['username__admin' =>
         $this->session->userdata('username__admin')])->row_array();
+        $data['data_masyarakat'] = $this->Pengaduan_m->laporan_pengaduan()->result_array();
 
         $this->load->view('components_admin/header', $data);
         $this->load->view('components_admin/sidebar', $data);

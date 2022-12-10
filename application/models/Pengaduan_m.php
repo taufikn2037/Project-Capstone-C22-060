@@ -72,7 +72,7 @@ class Pengaduan_m extends CI_Model
 
 	public function laporan_pengaduan()
 	{
-		$this->db->select('pengaduan.*, users.name__user, tanggapan.tgl_tanggapan, tanggapan.tanggapan, admins.name_admin');
+		$this->db->select('pengaduan.*, users.name__user, users.nik__user, tanggapan.tgl_tanggapan, tanggapan.tanggapan, admins.name__admin');
 		$this->db->from('pengaduan');
 		$this->db->join('users', 'users.id_user = pengaduan.id_user', 'left');
 		$this->db->join('tanggapan', 'tanggapan.id_pengaduan = pengaduan.id_pengaduan', 'left');
