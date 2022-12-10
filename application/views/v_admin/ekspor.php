@@ -2,7 +2,6 @@
     <div class="card-header">
         <a href="#" class="btn btn-outline-secondary">Print</a>
         <a href="#" class="btn btn-outline-secondary">PDF</a>
-        <a href="#" class="btn btn-outline-secondary">Excel</a>
     </div>
 
     <div class="card-body">
@@ -10,11 +9,13 @@
             <thead>
                 <tr class="text-center">
                     <th>No.</th>
-                    <th>Tanggal</th>
-                    <th>NIK</th>
                     <th>Nama</th>
-                    <th>Isi Laporan</th>
+                    <th>NIK</th>
+                    <th>Laporan</th>
+                    <th>Tgl. Pengaduan</th>
                     <th>Status</th>
+                    <th>Tanggapan</th>
+                    <th>Tgl. Tanggapan</th>
                 </tr>
             </thead>
         </table>
