@@ -33,7 +33,7 @@ class Admin extends CI_Controller
 
     public function ekspor_data()
     {
-        $data['title'] = 'Ekspor Data';
+        $data['title'] = 'Data Pengaduan';
         $data['admins'] = $this->db->get_where('admins', ['username__admin' =>
         $this->session->userdata('username__admin')])->row_array();
         $data['data_masyarakat'] = $this->Pengaduan_m->laporan_pengaduan()->result_array();
@@ -41,7 +41,7 @@ class Admin extends CI_Controller
         $this->load->view('components_admin/header', $data);
         $this->load->view('components_admin/sidebar', $data);
         $this->load->view('v_admin/ekspor');
-        $this->load->view('components_admin/footer');
+        $this->load->view('components_admin/footer_ekspor');
     }
 
     public function data_masyarakat()
@@ -252,4 +252,5 @@ class Admin extends CI_Controller
         $this->load->view('v_admin/p_tolak', $data);
         $this->load->view('components_admin/footer');
     }
+
 }

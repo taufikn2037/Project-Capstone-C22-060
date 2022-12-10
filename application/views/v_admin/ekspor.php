@@ -1,9 +1,4 @@
 <div class="card">
-    <div class="card-header">
-        <a href="#" class="btn btn-outline-secondary">Print</a>
-        <a href="#" class="btn btn-outline-secondary">PDF</a>
-    </div>
-
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
             <thead>

@@ -17,10 +17,23 @@
 <script src="<?= base_url('assets') ?>/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="<?= base_url('assets') ?>/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script src="<?= base_url('assets') ?>/dist/js/adminlte.min.js"></script>
+<script src="<?= base_url('assets') ?>/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="<?= base_url('assets') ?>/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="<?= base_url('assets') ?>/plugins/datatables-buttons/js/jszip.min.js"></script>
+<script src="<?= base_url('assets') ?>/plugins/datatables-buttons/js/pdfmake.min.js"></script>
+<script src="<?= base_url('assets') ?>/plugins/datatables-buttons/js/vfs_fonts.js"></script>
+<script src="<?= base_url('assets') ?>/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="<?= base_url('assets') ?>/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+
 <script>
-  $(document).ready( function () {
-    $('#example1').DataTable();
-  } );
+    $(document).ready(function() {
+    $('#example1').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'print', 'pdf', 'excel'
+        ]
+    } );
+} );
 </script>
 </body>
 
