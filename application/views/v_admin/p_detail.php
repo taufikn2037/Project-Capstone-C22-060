@@ -1,9 +1,12 @@
 <div class="container-fluid mb-2">
-
-  <a href="<?= base_url('/admin/pengaduan_masuk') ?>" class="btn btn-primary"><i class="fas fa-arrow-left"></i></a>
-  <?= validation_errors('<div class="alert alert-danger alert-dismissible fade show" role="alert">','<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <?php if ($admins['id_role'] == '1') { ?>
+        <a href="<?= base_url('/admin/pengaduan_masuk') ?>" class="btn btn-primary"><i class="fas fa-arrow-left"></i></a>
+    <?php } else {  ?>
+        <a href="<?= base_url('/petugas/pengaduan_masuk') ?>" class="btn btn-primary"><i class="fas fa-arrow-left"></i></a>
+    <?php } ?>
+    <?= validation_errors('<div class="alert alert-danger alert-dismissible fade show" role="alert">', '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   </div>') ?>
-  <?= $this->session->flashdata('msg'); ?>
+    <?= $this->session->flashdata('msg'); ?>
 
     <div class="row">
 
@@ -19,7 +22,11 @@
         </div>
 
         <div class="col-lg-6">
-            <?= form_open('/admin/tambah_tanggapan'); ?>
+            <?php if ($admins['id_role'] == '1') { ?>
+                <?= form_open('/admin/tambah_tanggapan'); ?>
+            <?php } else {  ?>
+                <?= form_open('/petugas/tambah_tanggapan'); ?>
+            <?php } ?>
 
             <input type="hidden" name="id" value="<?= $data_pengaduan['id_pengaduan']; ?>">
             <label for="">Status Tanggapan</label>

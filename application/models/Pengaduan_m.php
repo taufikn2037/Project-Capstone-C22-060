@@ -5,7 +5,6 @@ class Pengaduan_m extends CI_Model
 {
 
 	private $table = 'pengaduan';
-	private $primary_key = 'id_pengaduan';
 
 	public function create($data)
 	{
