@@ -11,4 +11,5 @@ Tema Captone | Ide Capstone | Detail Ide
 --- | --- | ---
 Solusi Pengelolaan yang berkelanjutan | "SuaraQita" Sistem pengaduan masyarakat kota bandar Lampung | Aplikasi SuaraQita merupakan aplikasi yang dapat digunakan oleh masyarakat untuk menyampaikan pengaduan atau keluhan dari pelayanan publik yang ada. Aplikasi ini dapat diakses melalui website sehingga dapat digunakan di perangkat apapun dan masyarakat dapat melakukan pengaduan atau keluhan dimanapun dan kapanpun.
 
+![Homepage-SuaraQita](https://user-images.githubusercontent.com/95567390/206898409-55467f83-d9d3-4e11-8c5a-69eaad63cdb8.png)
 
