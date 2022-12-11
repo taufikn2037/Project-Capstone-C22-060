@@ -63,7 +63,7 @@
                         ada.</p>
 
                     <p tabindex="0">Aplikasi ini dapat diakses melalui website sehingga dapat
-                        digunakan di perangkat apapun dan msayarakat dapat
+                        digunakan di perangkat apapun dan masyarakat dapat
                         melakukan pengaduan atau keluhan dimanapun dan
                         kapanpun.</p>
                 </div>

@@ -134,7 +134,7 @@
                         <div class="form-group row py-2">
                             <label for="password__user" class="col-sm-4 col-form-label">Password Baru</label>
                             <div class="col-sm-8">
-                            <input type="password" class="form-control" id="password__user" name="password__user" placeholder="Password Baru">
+                            <input type="password" class="form-control" name="password__user" placeholder="Password Baru">
                             </div>
                             <?= form_error('password__user', '<small class="text-danger pl-3">', '</small>') ?>
                         </div>
@@ -142,8 +142,8 @@
                         <div class="form-group row py-2">
                             <div class="col-sm-12">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                                <label class="form-check-label" for="invalidCheck">
+                                <input class="form-check-input" type="checkbox" value="" required>
+                                <label class="form-check-label">
                                 <small>Yakin ingin mengganti password?</small>
                                 </label>
                             </div>
