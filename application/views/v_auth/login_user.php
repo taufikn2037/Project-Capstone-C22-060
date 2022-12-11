@@ -5,6 +5,7 @@
   <title>Login SuaraQita</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="dicoding:email" content="mordiansyah13th@gmail.com">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
   <link href="<?php echo base_url();?>assets/dist/img/logo.png" rel="icon">
   <link rel="stylesheet" href="<?= base_url('assets') ?> /dist/css/auth.css">
