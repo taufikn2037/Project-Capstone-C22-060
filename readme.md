@@ -1,4 +1,4 @@
-|#Project Capstone Kelompok C22-060#|
+|Project Capstone Kelompok C22-060|
 
 ID Member | NAMA | Asal Universitas
 --- | --- | ---
@@ -7,7 +7,9 @@ F009X0067    | Kevin Jonathan | Universitas Gunadarma
 F004X0004   | Cholid Junoto | Institut Teknologi Sepuluh Nopember
 F248X0541   | Taufik Nurhidayat | Universitas Lampung
 
-Ide Capstone : "SuaraQita" Sistem pengaduan masyarakat kota bandar Lampung
-Tema Captone : Solusi Pengelolaan yang berkelanjutan
-#Penjelasan Ide
+Tema Captone | Ide Capstone  
+--- | ---
+Solusi Pengelolaan yang berkelanjutan | "SuaraQita" Sistem pengaduan masyarakat kota bandar Lampung
+
+##Penjelasan Ide##
 Aplikasi SuaraQita merupakan aplikasi yang dapat digunakan oleh masyarakat untuk menyampaikan pengaduan atau keluhan dari pelayanan publik yang ada. Aplikasi ini dapat diakses melalui website sehingga dapat digunakan di perangkat apapun dan masyarakat dapat melakukan pengaduan atau keluhan dimanapun dan kapanpun.
