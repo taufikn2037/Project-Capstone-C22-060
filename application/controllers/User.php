@@ -33,6 +33,8 @@ class User extends CI_Controller
         $data['title'] = 'Profile';
         $data['users'] = $this->db->get_where('users', ['username__user' =>
         $this->session->userdata('username__user')])->row_array();
+        $data['data_masyarakat'] = $this->m_model->get_data('users')->result();
+
 
         $this->load->view('components_admin/header', $data);
         $this->load->view('components_users/sidebar', $data);
@@ -42,66 +44,30 @@ class User extends CI_Controller
 
     public function edit_profile($id)
     {
-        $cek_data = $this->db->get_where('users', ['id_user' => htmlspecialchars($id)])->row_array();
-        $data['users'] = $this->db->get_where('users', ['username__user' =>
-        $this->session->userdata('username__user')])->row_array();
+        $data = array(
+            'id_user' => $id,
+            'name__user' => $this->input->post('name__user'),
+            'email__user' => $this->input->post('email__user'),
+            'nik__user' => $this->input->post('nik__user'),
+            'no_telepon' => $this->input->post('no_telepon'),
+            'username__user' => $this->input->post('username__user'),
+        );
+        $this->db->where('id_user', $data['id_user']);
+        $this->db->update('users', $data);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">Profil Berhasil Diubah<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        redirect('user/profile');
+    }
 
-        if (!empty($cek_data)) {
-
-            $data['title'] = 'Profile';
-            $data['users'] = $cek_data;
-
-            $this->form_validation->set_rules('isi_laporan', 'Isi Laporan Pengaduan', 'trim|required');
-            $this->form_validation->set_rules('foto', 'Foto Pengaduan', 'trim');
-
-            if ($this->form_validation->run() == FALSE) {
-                $this->load->view('components_admin/header', $data);
-                $this->load->view('components_users/sidebar', $data);
-                $this->load->view('v_user/profile');
-                $this->load->view('components_admin/footer');
-            } else {
-
-                $upload_profile = $this->upload_profile('image');
-
-                if ($upload_profile == FALSE) {
-                    $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert">
-							Upload foto pengaduan gagal, hanya png,jpg dan jpeg yang dapat di upload!
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-                    redirect('user/profile');
-                } else {
-
-
-                    $path = './assets/upload_foto/' . $cek_data['image'];
-                    unlink($path);
-
-                    $params = [
-                        'image'                => $upload_profile,
-                    ];
-
-                    $resp = $this->db->update('users', $params, ['id_user' => $id]);;
-
-                    if ($resp) {
-                        $this->session->set_flashdata('msg', '<div class="alert alert-primary" role="alert">
-								Foto berhasil diganti!
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-
-                        redirect('user/profile');
-                    } else {
-                        $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert">
-								Foto gagal diganti!
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-
-                        redirect('user/profile');
-                    }
-                }
-            }
-        } else {
-            $this->session->set_flashdata('msg', '<div class="alert alert-danger" role="alert">
-				Data Tidak Ada
-				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-
-            redirect('user/profile');
-        }
+    public function edit_password($id)
+    {
+        $data = array(
+            'id_user' => $id,
+            'password__user' => password_hash($this->input->post('password__user'), PASSWORD_DEFAULT),
+        );
+        $this->db->where('id_user', $data['id_user']);
+        $this->db->update('users', $data);
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">Password Berhasil Diubah<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        redirect('user/profile');
     }
 
     public function data_pengaduan()
@@ -314,25 +280,6 @@ class User extends CI_Controller
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload($foto)) {
-            return FALSE;
-        } else {
-            return $this->upload->data('file_name');
-        }
-    }
-
-    private function upload_profile($image)
-    {
-        $config['upload_path']          = './assets/upload_foto/';
-        $config['allowed_types']        = 'jpeg|jpg|png';
-        $config['max_size']             = 2048;
-        $config['remove_spaces']        = TRUE;
-        $config['detect_mime']            = TRUE;
-        $config['mod_mime_fix']            = TRUE;
-        $config['encrypt_name']            = TRUE;
-
-        $this->load->library('upload', $config);
-
-        if (!$this->upload->do_upload($image)) {
             return FALSE;
         } else {
             return $this->upload->data('file_name');

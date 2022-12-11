@@ -13,21 +13,21 @@
                     <th>Aksi</th>
                 </tr>
             </thead>
-            <?php
-            foreach($data_masyarakat as $data) : ?>
-              <tbody>
-                  <tr>
-                      <td><?= $data->nik__user ?></td>
-                      <td><?= $data->name__user ?></td>
-                      <td><?= $data->username__user ?></td>
-                      <td><?= $data->email__user ?></td>
-                      <td><?= $data->no_telepon ?></td>
-                      <td>
-                          <a href="<?= base_url('admin/delete_masyarakat/' . $data->id_user) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin menghapus data ini?')">Hapus</a>
-                      </td>
-                  </tr>
-              </tbody>
-          <?php endforeach ?>
+            <tbody>
+                <?php
+                foreach($data_masyarakat as $data) : ?>
+                <tr>
+                    <td><?= $data->nik__user ?></td>
+                    <td><?= $data->name__user ?></td>
+                    <td><?= $data->username__user ?></td>
+                    <td><?= $data->email__user ?></td>
+                    <td><?= $data->no_telepon ?></td>
+                    <td>
+                        <a href="<?= base_url('admin/delete_masyarakat/' . $data->id_user) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin menghapus data ini?')">Hapus</a>
+                    </td>
+                </tr>
+                <?php endforeach ?>
+            </tbody>
         </table>
     </div>
 </div>

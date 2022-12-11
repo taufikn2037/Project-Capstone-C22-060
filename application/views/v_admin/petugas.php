@@ -13,19 +13,19 @@
                     <th>Aksi</th>
                 </tr>
             </thead>
-            <?php
-            foreach ($data_petugas as $data) : ?>
-                <tbody>
-                    <tr class="text-center">
-                        <td><?= $data->name__admin ?></td>
-                        <td><?= $data->username__admin ?></td>
-                        <td>
-                            <button data-toggle="modal" data-target="#edit<?= $data->id_admin ?>" class="btn btn-warning btn-sm"> Edit</button>
-                            <a href="<?= base_url('admin/delete_petugas/' . $data->id_admin) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin menghapus data ini?')">Hapus</a>
-                        </td>
-                    </tr>
-                </tbody>
-            <?php endforeach ?>
+            <tbody>
+                <?php
+                foreach ($data_petugas as $data) : ?>
+                <tr class="text-center">
+                    <td><?= $data->name__admin ?></td>
+                    <td><?= $data->username__admin ?></td>
+                    <td>
+                        <button data-toggle="modal" data-target="#edit<?= $data->id_admin ?>" class="btn btn-warning btn-sm"> Edit</button>
+                        <a href="<?= base_url('admin/delete_petugas/' . $data->id_admin) ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin menghapus data ini?')">Hapus</a>
+                    </td>
+                </tr>
+                <?php endforeach ?>
+            </tbody>
         </table>
     </div>
 </div>
