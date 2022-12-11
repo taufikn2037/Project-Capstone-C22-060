@@ -50,7 +50,6 @@ class User extends CI_Controller
             'email__user' => $this->input->post('email__user'),
             'nik__user' => $this->input->post('nik__user'),
             'no_telepon' => $this->input->post('no_telepon'),
-            'username__user' => $this->input->post('username__user'),
         );
         $this->db->where('id_user', $data['id_user']);
         $this->db->update('users', $data);

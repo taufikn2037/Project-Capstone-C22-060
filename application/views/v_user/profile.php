@@ -87,10 +87,6 @@
                 </div>
                 <div class="modal-body">
                     <form action="<?= base_url('user/edit_profile/' . $data->id_user) ?>" method="POST">
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" name="username__user" class="form-control" value="<?= $data->username__user ?>">
-                        </div>
 
                         <div class="form-group">
                             <label>Nama</label>
