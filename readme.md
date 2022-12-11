@@ -1,4 +1,4 @@
-|Project Capstone Kelompok C22-060|
+# Project Capstone Kelompok C22-060
 
 ID Member | NAMA | Asal Universitas
 --- | --- | ---
